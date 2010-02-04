@@ -1,0 +1,129 @@
+/* Menu Nav
+----------------------------------------- */
+#page_menu_nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 158px;
+	left: 0;
+	width: 750px;
+}
+#page_menu_nav li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#page_menu_nav li a {
+	display: block;
+	padding-top: 36px;
+	height: 0;
+	overflow: hidden;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+#page_menu_nav li a:hover {
+	background-position: 0px -36px;
+}
+#menu_home a {
+	width: 68px;
+	background-image: url("../../images/nav_home.png");
+}
+#menu_property a {
+	width: 147px;
+	background-image: url("../../images/nav_property.png");
+}
+#menu_latest a {
+	width: 116px;
+	background-image: url("../../images/nav_latest.png");
+}
+#menu_services a {
+	width: 92px;
+	background-image: url("../../images/nav_services.png");
+}
+#menu_about a {
+	width: 103px;
+	background-image: url("../../images/nav_about.png");
+}
+#menu_advertising a {
+	width: 114px;
+	background-image: url("../../images/nav_advertising.png");
+}
+#menu_help a {
+	width: 110px;
+	background-image: url("../../images/nav_help.png");
+}
+#home #menu_home a, #property #menu_property a, #latest #menu_latest a,
+#services #menu_services a, #about #menu_about a, #advertising #menu_advertising a, #help #menu_help a {
+	background-position: 0px -36px;
+}
+
+
+#page_menu_account {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 126px;
+	left: 549px;
+}
+#page_menu_account li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#page_menu_account li a {
+	display: block;
+	height: 0;
+	padding-top: 20px;
+	overflow: hidden;
+	background: url("../../images/page_header_rollover.png") no-repeat;
+}
+#page_menu_account li#menu_register a {
+	width: 105px;
+	background-position: 15px 20px;
+}
+#page_menu_account li#menu_logout a {
+	width: 105px;
+	background: url("../../images/page_header_logout.png") no-repeat 0px 0px;
+}
+#page_menu_account li#menu_account a {
+	width: 96px;
+	background-position: 0px 20px;
+}
+#page_menu_account li#menu_register a:hover {
+	background-position: 15px 7px;
+}
+#page_menu_account li#menu_logout a:hover {
+	background-position: 0px -20px;
+}
+#page_menu_account li#menu_account a:hover {
+	background-position: 0px 7px;
+}
+
+/* Submenu
+----------------------------------------- */
+#page_submenu {
+	height: 23px;
+	background: url("../../images/page_submenu_bg.png") repeat-x top left;
+	border-bottom: 1px dashed #bcb4a5;
+}
+#page_submenu ul {
+	margin: 0;
+	padding: 0 0 0 13px;
+	list-style: none;
+}
+#page_submenu li {
+	margin: 0;
+	float: left;
+	padding: 4px 20px 0px 12px;
+	background: url("../../images/page_submenu_bullet.png") no-repeat 0px 10px;
+}
+#page_submenu li a {
+	color: #908677;
+	font-weight: bold;
+	text-decoration: none;
+}
+#page_submenu li a:hover {
+	text-decoration: underline;
+}

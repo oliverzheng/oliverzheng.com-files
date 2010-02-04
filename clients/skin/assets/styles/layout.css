@@ -1,0 +1,78 @@
+.one_col #page_content {
+	padding: 0px 35px;
+}
+.nosub #page_content {
+	margin-top: -30px;
+	margin-bottom: 20px;
+}
+.two_cols #page_content {
+	padding: 0px 35px;
+	background: url("../images/two_cols_bg.png") repeat-y 185px 0px;
+	margin-top: -30px;
+	margin-bottom: 40px;
+}
+.three_cols #page_content {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 5px 9px;
+	background: url("../images/home_bg.png") repeat-y top center;
+}
+
+
+.two_cols #column_left {
+	width: 145px;
+	float: left;
+	border-right: 1px solid #afafaf;
+	padding: 7px 5px 0px 0px;
+}
+.two_cols #column_right {
+	width: 460px;
+	float: right;
+	padding-top: 7px;
+}
+
+
+
+.three_cols #column_left {
+	width: 223px;
+	padding-right: 4px;
+	float: left;
+}
+.three_cols #column_middle {
+	width: 232px;
+	float: left;
+	margin-left: 2px;
+}
+.three_cols #column_right {
+	width: 225px;
+	margin-left: 2px;
+	float: left;
+}
+
+
+
+
+#product_cats {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 227px;
+	height: 219px;
+	background: url("../images/products_cats.png") no-repeat 0px 0px;
+}
+#product_cats li {
+	margin: 0;
+	padding: 0;
+}
+#product_cats li a {
+	display: block;
+	width: 227px;
+	height: 0;
+	overflow: hidden;
+}
+#product_cats #beauty a {
+	padding-top: 90px;
+}
+#product_cats #herbs a {
+	padding-top: 100px;
+}

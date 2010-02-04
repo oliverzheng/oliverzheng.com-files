@@ -1,0 +1,203 @@
+form {
+	margin: 0;
+	padding: 0;
+}
+
+/* Width & Height
+--------------------------*/
+.multi_fields {
+	margin-right: 5px;
+}
+.form_field {
+	height: 28px;
+	margin: 0;
+}
+.width_41 {
+	width: 41px;
+}
+.width_107 {
+	width: 107px;
+}
+.width_157 {
+	width: 157px;
+}
+.width_167 {
+	width: 167px;
+}
+
+/* Input Text
+--------------------------*/
+div.input_text_left {
+	padding-left: 5px;
+	background: url("../../images/forms/input_text_left.png") no-repeat top left;
+}
+div.input_text_right {
+	padding-right: 5px;
+	background: url("../../images/forms/input_text_right.png") no-repeat top right;
+}
+input.text {
+	height: 17px;
+	color: #948b7c;
+	font: 11px Arial, Helvetica, sans-serif;
+	padding-top: 2px;
+	border: 0;
+	background: url("../../images/forms/input_text_bg.png") repeat-x 0px 0px;
+	margin: -1px 0px 0px 0px;
+}
+*:lang(en) input.text { /* These styles will be applied to all browsers except for IE and Safari */
+	margin-top: 0px !important;
+}
+input.text:empty { /* These styles will be applied to Safari */
+	margin-top: 0px !important;
+}
+@media screen and (min-width: 0px)
+{
+	input.text {
+		padding-top: 0px;
+		height: 18px;
+	}
+}
+input {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #948b7c;
+}
+input.single_digit {
+	width: 15px;
+	height: 13px;
+}
+input.simple {
+	width: 163px;
+}
+select.simple {
+	width: 167px;
+}
+* html select.simple {
+	width: 169px;
+}
+@media screen and (min-width: 0px)
+{
+	select.simple {
+		width: 169px;
+	}
+}
+input.simple_small {
+	width: 93px;
+	margin-right: 3px;
+}
+input.simple_smaller {
+	width: 73px;
+	margin-right: 3px;
+}
+input.simple_smallest {
+	width: 49px;
+	margin-right: 3px;
+}
+select.simple_smaller {
+	width: 73px;
+	margin-right: 3px;
+}
+select.simple_small {
+	width: 67px;
+}
+
+/* Label
+--------------------------*/
+.label {
+	height: 19px;
+	line-height: 19px;
+}
+.label_60 {
+	width: 60px;
+	display: block;
+}
+.label_90 {
+	width: 90px;
+	display: block;
+}
+.label_120 {
+	width: 120px;
+	display: block;
+}
+
+/* Checkbox
+--------------------------*/
+input.checkbox {
+	position: relative;
+	top: 3px;
+}
+* html input.checkbox {
+	top: 2px;
+}
+@media screen and (min-width: 0px)
+{
+	input.checkbox {
+		top: 0px;
+	}
+}
+
+/* Submit Buttons
+--------------------------*/
+input.submit {
+	color: #ffffff;
+	font-weight: bold;
+	font: 11px Arial, Helvetica, sans-serif;
+	border: 0;
+	height: 20px;
+	padding: 0px 3px 6px 0px;
+}
+* html input.submit {
+	padding: 0px 3px 4px 0px;
+}
+@media screen and (min-width: 0px)
+{
+	input.submit {
+		padding: 0px 3px 4px 0px;
+	}
+}
+input.submit_67_blue {
+	background: url("../../images/forms/submit_67_blue.png") no-repeat top left;
+	width: 68px;
+	height: 25px;
+}
+input.submit_87 {
+	background: url("../../images/forms/submit_87.png") no-repeat top left;
+	width: 87px;
+}
+input.submit_147 {
+	background: url("../../images/forms/submit_147.png") no-repeat top left;
+	width: 147px;
+}
+input.submit_247 {
+	background: url("../../images/forms/submit_247.png") no-repeat top left;
+	width: 247px;
+}
+
+/* File
+--------------------------*/
+input.file {
+}
+
+/* Select
+--------------------------*/
+select {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #948b7c;
+}
+@media screen and (min-width: 0px)
+{
+	select {
+		height: 20px;
+	}
+}
+
+/* Textarea
+--------------------------*/
+textarea {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #948b7c;
+	padding: 2px 4px;
+}
+textarea.simple {
+	width: 155px;
+	overflow: auto;
+}

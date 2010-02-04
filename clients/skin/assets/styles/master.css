@@ -1,0 +1,176 @@
+html {
+	height: 100%;
+	text-align: center;
+	background: #fde7f2;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	margin: 0 auto;
+	background: url("../images/page_bg.png") repeat-y top left;
+	width: 708px;
+	padding: 0 76px;
+	min-height: 100%;
+	position: relative;
+}
+* html body {
+	height: 100%;
+}
+#page {
+	padding-bottom: 124px;
+}
+#home #page {
+	padding-bottom: 70px;
+}
+#page_header {
+	width: 708px;
+	height: 250px;
+	background: url("../images/header_bg.jpg") no-repeat 0px 0px;
+	text-align: center;
+}
+#page_nav {
+	padding: 151px 9px 0px 9px;
+	height: 43px;
+	list-style: none;
+	overflow: hidden;
+	margin: 0;
+}
+#page_nav li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#page_nav li a {
+	display: block;
+	width: 115px;
+	padding-top: 43px;
+	height: 0;
+	overflow: hidden;
+	background-position: 0px -43px;
+	background-repeat: no-repeat;
+}
+#page_nav li a:hover {
+	background-position: 0px 0px;
+}
+#page_nav li#page_nav_home a {
+	background-image: url("../images/nav_home.jpg");
+}
+#page_nav li#page_nav_about a {
+	background-image: url("../images/nav_about.jpg");
+}
+#page_nav li#page_nav_products a {
+	background-image: url("../images/nav_products.jpg");
+}
+#page_nav li#page_nav_health a {
+	background-image: url("../images/nav_health.jpg");
+}
+#page_nav li#page_nav_shop a {
+	background-image: url("../images/nav_shop.jpg");
+}
+#page_nav li#page_nav_contact a {
+	background-image: url("../images/nav_contact.jpg");
+}
+#home #page_nav_home a, #about #page_nav_about a, #products #page_nav_products a,
+#health #page_nav_health a, #shop #page_nav_shop a, #contact #page_nav_contact a {
+	background-position: 0px 0px;
+}
+
+#page_subnav {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	height: 33px;
+	width: 402px;
+	text-align: left;
+}
+#page_subnav li {
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+#page_subnav li a {
+	display: block;
+	padding-top: 33px;
+	height: 0;
+	overflow: hidden;
+}
+#page_subnav li a:hover {
+	background-position: 0px -33px;
+}
+#page_subnav_overview a {
+	width: 106px;
+	background-image: url("../images/about_overview.png");
+}
+#page_subnav_news a {
+	width: 76px;
+	background-image: url("../images/about_news.png");
+}
+#page_subnav_events a {
+	width: 88px;
+	background-image: url("../images/about_events.png");
+}
+#page_subnav_petrasek a {
+	width: 132px;
+	background-image: url("../images/about_petrasek.png");
+}
+.about_overview #page_subnav_overview a, .about_news #page_subnav_news a,
+.about_events #page_subnav_events a, .about_petrasek #page_subnav_petrasek a {
+	background-position: 0px -33px;
+}
+
+
+
+#page_footer {
+	margin-top: 60px;
+	background: url("../images/slogan_bottom.png") no-repeat top center;
+	padding-top: 75px;
+	font-size: 10px;
+	position: absolute;
+	bottom: 0;
+	width: 708px;
+	left: 76px;
+	height: 49px;
+}
+#home #page_footer {
+	padding-top: 19px;
+	background-position: 14px -54px;
+}
+#page_footer ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+#page_footer ul li {
+	padding: 0 7px 0 0;
+	margin: 0 0 0 5px;
+	display: inline;
+	border-right: 1px solid #646464;
+}
+* html #page_footer ul li {
+	padding: 0 5px 0 0;
+	margin: 0 0 0 7px;
+}
+#page_footer ul li.last {
+	border: 0;
+}
+#page_footer ul li a {
+	color: #621a4b;
+	text-decoration: none;
+}
+#page_footer ul li a:hover {
+	text-decoration: underline;
+}
+#page_footer p {
+	color: #646464;
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+}
+#page_footer p a {
+	color: #646464;
+	text-decoration: none;
+}
+#page_footer p a:hover {
+	text-decoration: underline;
+}

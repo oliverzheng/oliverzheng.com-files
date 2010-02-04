@@ -1,0 +1,140 @@
+<!--
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+#page {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -291px 0px 0px -361px;
+	width: 722px;
+	height: 583px;
+}
+#page_header {
+	background: #ffd7dc;
+	height: 69px;
+	border-width: 3px 6px 6px 6px;
+	border-style: solid;
+	border-color: #ffc0c4;
+	padding: 1px 2px;
+}
+#page_header_left {
+	padding-left: 2px;
+	background: url("./images/header_left.png") no-repeat; 
+}
+#page_header_right {
+	padding-right: 2px;
+	background: url("./images/header_right.png") no-repeat top right; 
+}
+#page_title {
+	background: url("./images/header_bg.png");
+	height: 69px;
+}
+#page_title h1 {
+	margin: 0px;
+	padding-top: 62px;
+	height: 0px;
+	width: 102px;
+	background: url("./images/header_title.png") no-repeat 28px 11px;
+	overflow: hidden;
+	float: left;
+}
+#page_title p {
+	margin: 0px 0px 0px 251px;
+	padding-top: 59px;
+	height: 0px;
+	width: 338px;
+	overflow: hidden;
+	background: url("./images/header_caption.png") no-repeat 0px 51px;
+}
+* html #page_title p {
+	margin-left: 353px;
+}
+#page_menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	height: 73px;
+	margin-bottom: 6px;
+}
+#page_menu li {
+	float: left;
+}
+#page_menu li a img {
+	border: 0;
+}
+#page_content {
+	height: 394px;
+	background: url("./images/signature_product.jpg") no-repeat top right;
+	padding-right: 236px;
+}
+#fors {
+	margin: 0px;
+	padding: 6px 0px 0px 5px;
+	list-style: none;
+}
+#fors li a img {
+	border: 0;
+}
+#fors #her a {
+	width: 248px;
+	float: left;
+}
+#fors #him a {
+	width: 233px;
+	float: right;
+}
+* html #fors #him a {
+	position: relative;
+	top: -18px;
+}
+#page_footer {
+	background: #ffdfe3;
+	height: 27px;
+	position: relative;
+}
+#page_footer ul {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	z-index: 0;
+	position: absolute;
+	top: 6px;
+	left: 30px;
+}
+#page_footer ul li {
+	float: left;
+	border-right: 1px solid #545454;
+	padding-right: 7px;
+	margin-right: 7px;
+	line-height: 12px;
+	padding-bottom: 2px;
+	font-size: 9px;
+	padding-top: 2px;
+}
+* html #page_footer ul li {
+}
+#page_footer ul li.last {
+	padding-right: 0;
+	margin-right: 0;
+	border: 0;
+}
+#page_footer ul li a {
+	text-transform: uppercase;
+	color: #545454;
+	text-decoration: none;
+}
+#page_footer ul li a:hover {
+	text-decoration: underline;
+}
+#page_footer img {
+	position: absolute;
+	top: 0px;
+	left: 312px;
+}
+#attention_whores a {
+	font-size: 11px;
+}
+-->

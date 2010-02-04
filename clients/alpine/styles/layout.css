@@ -1,0 +1,37 @@
+#page_main * {
+	margin: 0;
+	padding: 0;
+}
+#page_content {
+	padding: 0 30px;
+}
+.pad_more {
+	padding-bottom: 150px !important;
+}
+
+.one_col #page_content {
+	padding-top: 16px !important;
+}
+
+#page_content_indent {
+	padding-left: 40px;
+}
+#page_content_indent_more {
+	padding-left: 55px;
+}
+
+.two_cols #page_content {
+/*	background: url("../images/two_cols_bg.png") repeat-y top left;*/
+	padding: 0 0 100px 0 !important;
+}
+.two_cols #page_content_left {
+	width: 180px;
+	float: left;
+}
+.two_cols #page_content_right {
+	width: 530px;
+	float: right;
+	padding-top: 16px;
+	padding-right: 60px;
+	position: relative;
+}

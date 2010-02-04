@@ -1,0 +1,92 @@
+/* Page Setup
+----------------------------------------- */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+html {
+	background: #d6e4eb url("../../images/page_bg.png") repeat-x top left;
+	text-align: center;
+	height: 100%;
+}
+body {
+	width: 776px;
+	margin: 0 auto;
+	text-align: left;
+	font: 11px/1.5em Arial, Helvetica, sans-serif;
+	background: #e2ecf1 url("../../images/page_bg_whiter.png") repeat-x top left;
+	min-height: 100%;
+}
+* html body {
+	height: 100%;
+}
+#page_page {
+	background: url("../../images/page_bg_3.png") repeat-y top left;
+}
+#page_top {
+	height: 10px;
+}
+#page_bot {
+	height: 40px;
+}
+#page_container {
+	background: url("../../images/page_bg_2.png") no-repeat top left;
+	padding: 14px 13px 0px 13px;
+}
+
+/* Header
+----------------------------------------- */
+#page_header {
+	height: 195px;
+	overflow: hidden;
+	background: url("../../images/page_header.jpg") no-repeat top left;
+	position: relative;
+}
+#page_header h1 {
+	display: none;
+}
+#header_ad {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 12px;
+	left: 282px;
+}
+#header_ad a img {
+	border: 0;
+}
+
+/* Main
+----------------------------------------- */
+#page_main {
+	background: url("../../images/page_main_bg.png") repeat-x top left;
+}
+
+/* Footer
+----------------------------------------- */
+#page_footer {
+	clear: both;
+	margin: 0 -13px;
+	padding: 0 13px;
+	padding-bottom: 16px;
+	background: url("../../images/page_bg_footer.png") no-repeat bottom left;
+}
+#page_footer p {
+	margin: 0;
+	border-top: 1px dashed #bdb5a7;
+	padding: 4px 2px 1px 2px;
+	color: #968d7b;
+	font-size: 10px;
+}
+#page_footer p a {
+	color: #968d7b;
+	text-decoration: none;
+	padding: 0px 14px;
+	border-right: 1px dashed #968d7b;
+}
+#page_footer p a:hover {
+	text-decoration: underline;
+}
+#page_footer p a.menu_last_item {
+	border: 0;
+}

@@ -1,0 +1,495 @@
+/* Common Table Elements
+-------------------------*/
+table {
+	margin: 0px 0px 13px 0px;
+}
+table.nomargin {
+	margin: 0;
+}
+table.nopadding tr td {
+	padding: 0;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+.valign_top {
+	vertical-align: top;
+}
+.valign_middle {
+	vertical-align: middle;
+}
+.valign_bottom {
+	vertical-align: bottom;
+}
+
+/* Simple Table Setup
+-------------------------*/
+table.table_simple {
+	border: 0;
+	width: 99%;
+}
+table.fluid {
+	width: auto;
+}
+table.fluid td {
+	padding: 0px 15px 10px 0px;
+}
+table.padding td {
+	padding-bottom: 10px;
+}
+table.padding_right td {
+	padding-right: 10px;
+}
+td.padding_top {
+	padding-top: 10px;
+}
+td.blue {
+	background: #ecf1f5;
+}
+
+/* Selection 
+-------------------------*/
+td.selected {
+	background: #61bfdf;
+	padding: 10px;
+}
+td.unselected {
+	background: #cfecf5;
+	padding: 10px;
+}
+
+/* table.listings
+-------------------------*/
+table.listings {
+	width: 99.5%;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.listings thead {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 12px;
+	background: #4a5f6a url("../../images/data/thead_bg.png") repeat-x top left;
+}
+table.listings thead tr {
+}
+table.listings thead tr th {
+	height: 28px;
+	text-align: left;
+	vertical-align: middle;
+	border-right: 1px solid #eceff0;
+}
+
+/* spacing */
+table.listings th, table.listings td {
+	padding: 0px 10px;
+}
+table.listings tbody td {
+	padding: 10px 10px 0px 10px;
+	vertical-align: top;
+}
+table.listings .first {
+	width: 248px;
+}
+table.listings .second {
+	width: 136px;
+}
+table.listings .second {
+	width: 30px;
+}
+.option {
+	display: block;
+	float: left;
+	width: 30px;
+	height: 18px;
+	padding-left: 10px;
+}
+table .option {
+	padding: 0;
+}
+
+/* Tbody */
+table.listings .odd {
+	background: #d8e3eb;
+}
+table.listings .odd td {
+	background: #d8e3eb;
+	border-right: 1px solid #c8c1b6;
+}
+table.listings td {
+	border-right: 1px solid #d8d8d4;
+	background: #ffffff;
+}
+table.listings td.last {
+	border-right: 0;
+}
+
+/* table.listings_red
+-------------------------*/
+table.listings_red {
+	width: 99.5%;
+	border-style: solid;
+	border-width: 0px 1px 0px 1px;
+	border-color: #a72f06;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.listings_red thead {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 12px;
+	background: #4a5f6a url("../../images/data/thead_red_bg.png") repeat-x top left;
+}
+table.listings_red thead tr {
+}
+table.listings_red thead tr th {
+	height: 28px;
+	text-align: left;
+	vertical-align: middle;
+	border-right: 1px solid #eceff0;
+}
+table.listings_red thead tr th.last {
+	border-right: 0;
+}
+
+/* spacing */
+table.listings_red th, table.listings_red td {
+	padding: 0px 10px;
+}
+table.listings_red tbody td {
+	padding: 10px 10px 0px 10px;
+	vertical-align: top;
+}
+table.listings_red .first {
+	width: 248px;
+}
+table.listings_red .second {
+	width: 136px;
+}
+table.listings_red .second {
+	width: 30px;
+}
+
+/* Tbody */
+table.listings_red tr {
+	border-bottom: 1px solid #a72f06;
+}
+* html table.listings_red td {
+	border-bottom: 1px solid #a72f06;
+}
+table.listings_red .odd {
+	background: #e1e1e1;
+}
+table.listings_red .odd td {
+	background: #e1e1e1;
+	border-right: 1px solid #c8c1b6;
+}
+table.listings_red td {
+	border-right: 1px solid #d8d8d4;
+	background: #f7f7f7;
+}
+table.listings_red td.last {
+	border-right: 1px solid #a72f06;
+}
+
+/* table.listings_thin
+-------------------------*/
+table.listings_thin {
+	width: 99.5%;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.listings_thin thead {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 12px;
+	background: #4a5f6a url("../../images/data/thead_bg.png") repeat-x top left;
+}
+table.listings_thin thead tr {
+}
+table.listings_thin thead tr th {
+	height: 28px;
+	text-align: left;
+	vertical-align: middle;
+	border-right: 1px solid #eceff0;
+}
+
+/* spacing */
+table.listings_thin th, table.listings td {
+	padding: 0px 10px;
+}
+table.listings_thin tbody td {
+	padding: 6px 10px 4px 10px;
+	vertical-align: top;
+}
+
+/* Tbody */
+table.listings_thin .odd {
+	background: #d8e3eb;
+}
+table.listings_thin .odd td {
+	background: #d8e3eb;
+}
+table.listings_thin td {
+	background: #e8eef3;
+}
+
+
+/* table.listings_simple
+-------------------------*/
+table.listings_simple {
+	width: 99%;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.listings_simple thead {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 12px;
+	background: #4a5f6a url("../../images/data/thead_bg.png") repeat-x top left;
+}
+table.listings_simple thead tr {
+}
+table.listings_simple thead tr th {
+	height: 28px;
+	text-align: left;
+	vertical-align: middle;
+	border-right: 1px solid #eceff0;
+}
+
+/* spacing */
+table.listings_simple th {
+	padding: 0px 10px;
+}
+table.listings_simple tbody td {
+	padding: 7px 10px 3px 10px;
+	vertical-align: top;
+}
+
+/* Tbody */
+table.listings_simple .odd td {
+	background: #ecf1f5;
+}
+table.listings_simple td {
+	background: #ffffff;
+	border-bottom: 1px dashed #cbc4b9;
+}
+
+td#td_bottom {
+	height: 15px;
+	background: #a8b0b6 url("../../images/data/dialog_bottom_bg.png") repeat-x 0px 0px;
+}
+
+/* table.listings_simple_2
+-------------------------*/
+table.listings_simple_2 {
+	width: 99%;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table.listings_simple_2 thead {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 11px;
+	background: #4a5f6a;
+}
+table.listings_simple_2 thead tr th {
+	text-align: center;
+	vertical-align: middle;
+	border-right: 1px solid #eceff0;
+}
+
+/* spacing */
+table.listings_simple_2 th {
+	padding: 4px 4px;
+}
+table.listings_simple_2 tbody td {
+	padding: 10px 4px 8px 4px;
+	vertical-align: top;
+}
+
+/* Tbody */
+table.listings_simple_2 .odd td {
+	background: #ecf1f5;
+}
+table.listings_simple_2 td {
+	background: #ffffff;
+	border-bottom: 1px dashed #cbc4b9;
+}
+
+/* Specific Elements
+------------------------*/
+.house_pic {
+	width: 78px;
+	height: 78px;
+	float: left;
+	background: url("../../images/data/house_pic_bg.png") no-repeat 0px 0px;
+	padding: 5px 0px 0px 5px;
+	margin: 0px 10px 0px 0px;
+}
+.listings_red .house_pic {
+	background: url("../../images/data/house_pic_grey_light_bg.png") no-repeat 0px 0px;
+}
+.listings_red .odd .house_pic {
+	background: url("../../images/data/house_pic_grey_dark_bg.png") no-repeat 0px 0px;
+}
+.house_pic_large {
+	width: 233px;
+	float: left;
+	background: url("../../images/listing/house_bg.png") no-repeat 0px 0px;
+	padding: 15px;
+	margin: 0px 10px 0px 0px;
+	text-align: center;
+}
+.odd .house_pic {
+	background: url("../../images/data/house_pic_odd_bg.png") no-repeat 0px 0px;
+}
+.pv_pic {
+	width: 129px;
+	height: 131px;
+	float: left;
+	background: url("../../images/pv/about_management_bg.png") no-repeat 0px 0px;
+	padding: 12px 13px;
+	margin: 0px 13px 0px 0px;
+}
+.affiliate_pic {
+	width: 103px;
+	float: left;
+	background: url("../../images/pv/about_affiliate_bg.png") no-repeat 0px 0px;
+	padding: 12px;
+	margin: 0px 1px 0px 0px;
+}
+.adv_pic {
+	width: 139px;
+	height: 140px;
+	float: left;
+	background: url("../../images/pv/about_pic_bg.png") no-repeat 0px 0px;
+	padding: 11px 12px;
+	margin: 0px 1px 0px 0px;
+}
+
+/* Dialog
+------------------------*/
+.dialog {
+	margin: 0px 0px 13px 0px;
+}
+.dialog h5 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	margin: 0;
+	background: url("../../images/data/thead_bg.png") repeat-x 0px 0px;
+	padding: 6px 10px 5px 10px;
+}
+.dialog .content {
+	background: #d8e3eb;
+	padding: 6px 10px 6px 10px;
+}
+.dialog .content table {
+	margin: 0;
+}
+.dialog .bottom {
+	padding: 7px 10px 5px 10px;;
+	background: #a8b0b6 url("../../images/data/dialog_bottom_bg.png") repeat-x 0px 0px;
+	border-top: 1px solid #e1e4e6;
+	border-bottom: 1px solid #bac1c6;
+}
+.dialog .bottom input.submit {
+	background: url("../../images/data/dialog_bottom_submit_bg_147.png") no-repeat 0px 0px;
+	padding-top: 2px;
+	height: 25px;
+}
+
+/* Promote Listing
+------------------------*/
+.promote_listing {
+	width: 390px;
+	height: 70px;
+	background: url("../../images/listing/promote_bg.png") no-repeat;
+	padding: 15px 15px 10px 20px;
+	margin-bottom: 13px;
+}
+.promote_listing_empty {
+	width: 390px;
+	height: 70px;
+	padding: 15px 15px 10px 20px;
+	margin-bottom: 13px;
+}
+
+/* Cart
+-----------------------*/
+#cart {
+	width: 100%;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	font-size: 11px;
+	color: #783d09;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+#cart a {
+	color: #783d09;
+}
+* html #cart {
+	margin-top: 25px;
+}
+@media screen and (min-width: 0px)
+{
+	#cart {
+		margin-top: 25px;
+	}
+}
+#cart td {
+	background: url("../../images/data/cart_tr.png") repeat-x 0px 17px;
+	vertical-align: top;
+	text-align: left;
+	padding: 0;
+}
+#cart td.four {
+	width: 163px;
+}
+#cart td.five {
+	width: 130px;
+}
+#cart td.front div {
+	background: #FFFFFF url("../../images/data/cart_tr_front.png") no-repeat top left;
+	width: 3px;
+	height: 4px;
+	margin: 17px 20px 0px 0px;
+}
+#cart td.end {
+	text-align: right;
+	padding: 17px 0px 0px 0px;
+}
+#cart td.end div {
+	background: #FFFFFF url("../../images/data/cart_tr_end.png") no-repeat;
+	width: 3px;
+	height: 4px;
+}
+#cart td dl {
+	background: url("../../images/data/cart_td.png") no-repeat 0px 10px;
+	margin: 0;
+	padding: 0 0 0 24px;
+}
+#cart td dt {
+	margin: 0 0 7px;
+	padding: 0;
+	text-transform: uppercase;
+	display: block;
+}
+#cart td dd {
+	margin: 0;
+	padding: 0;
+	display: block;
+	line-height: 1.2em;
+}
+#cart .current dl {
+	background: url("../../images/data/cart_td_current.png") no-repeat 0px 10px;
+	font-weight: bold;
+}

@@ -1,0 +1,200 @@
+#page_main h2 {
+	margin-bottom: 5px;
+}
+#page_main p {
+	margin-bottom: 15px;
+}
+
+
+a img {
+	border: 0;
+}
+a {
+	color: #366222;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: underline;
+}
+a.arrow {
+	position: relative;
+	top: -4px;
+	left: 3px;
+}
+* html a.arrow {
+	top: -1px;
+}
+
+
+table.dotted {
+	width: 99%;
+	border-spacing: 0;
+}
+table tr {
+}
+#page_main table.dotted tr td {
+/*	border-bottom: 1px dotted #aabc50; */
+	border: 0;
+	background: url("../images/short_dotted_line.png") repeat-x bottom left;
+	padding: 5px;
+}
+table.dotted tr td.mmddyyyy {
+	width: 25%;
+}
+table.dotted tr td.position {
+	width: 50%;
+}
+table.dotted tr td.learnmore {
+	width: 25%;
+}
+table.plain {
+	width: 100%;
+	border-spacing: 0;
+	border: 0;
+}
+#page_main table.padding tr td {
+	padding: 5px 8px;
+}
+
+
+.content_text {
+	background: 0;
+	border: 1px solid #69963b;
+}
+#page_content input.text {
+	width: 180px;
+}
+#page_content textarea {
+	width: 280px;
+	height: 90px;
+	overflow: auto;
+}
+#page_content input.text, #page_content textarea {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+#page_content select {
+	width: 182px;
+}
+
+
+.highlight_orange {
+	font-size: 13px;
+	color: #cd5412;
+	font-weight: bold;
+}
+.highlight_green {
+	font-weight: bold;
+	color: #69963b;
+}
+.highlight_darkgreen {
+	color: #366222;
+	font-size: 13px;
+	font-weight: bold;
+}
+.highlight_maroon {
+	color: #cd5412;
+}
+
+#page_main .margin_top_5 {
+	margin-top: -5px;
+}
+#page_main .margin_top_15_add {
+	margin-top: 15px;
+}
+#page_main .margin_left_10_add {
+	margin-left: 10px;
+}
+#page_main .margin_bottom_5_add {
+	margin-bottom: 5px;
+}
+
+.nobold {
+	font-weight: normal;
+}
+
+#page_main ul.badges {
+	list-style: none;
+	padding-top: 15px;
+}
+* html #page_main ul.badges {
+	padding-bottom: 0px !important;
+}
+#page_main ul.badges_short {
+	padding-bottom: 320px;
+}
+#page_main ul.badges_long {
+	padding-bottom: 40px;
+}
+#page_main ul.badges li {
+	float: left;
+	margin-bottom: 15px;
+	margin-right: 6px;
+}
+ul.position_relative li {
+	position: relative;
+}
+
+.position_absolute {
+	position: absolute;
+	top: 105px;
+	left: 13px;
+	display: block;
+	width: 140px;
+	height: 30px;
+	overflow: hidden;
+	line-height: 1.2em;
+}
+.top_right {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.case_study {
+	padding: 20px !important;
+	margin-left: 30px !important;
+	margin-bottom: 60px !important;
+	width: 450px;
+	background: url("../images/short_dotted_line.png") repeat-x bottom left;
+	text-align: center;
+}
+.large_font a {
+	font-size: 13px;
+}
+.underline a {
+	text-decoration: underline;
+}
+
+.float_left {
+	float: left;
+}
+.float_right {
+	float: right;
+}
+.float_clearer {
+	visibility: hidden;
+	height: 1px;
+	overflow: hidden;
+	clear: both;
+}
+.align_left {
+	text-align: left;
+}
+.align_right {
+	text-align: right;
+}
+.align_center {
+	text-align: center;
+}
+.valign_top {
+	vertical-align: top;
+}
+.valign_middle {
+	vertical-align: middle;
+}
+.valign_bottom {
+	vertical-align: bottom;
+}

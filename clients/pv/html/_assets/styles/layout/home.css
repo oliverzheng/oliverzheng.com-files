@@ -1,0 +1,22 @@
+#recent_news {
+	background: url("../../images/home/news_bg.png") no-repeat;
+	padding: 58px 0px 15px 11px;
+	width: 183px;
+}
+#recent_news div {
+	background: #f4f2ec;
+	padding: 0 0 0 11px;
+}
+#recent_news p {
+	padding: 0 0 5px;
+	margin: 0;
+}
+
+/* P&V
+------------------------*/
+.services_bg {
+	background: url("../../images/pv/services_screenie_bg.png") no-repeat 0px 0px;
+	width: 156px;
+	height: 120px;
+	padding: 11px;
+}

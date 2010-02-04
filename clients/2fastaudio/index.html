@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>2Fast Audio</title>
+<style type="text/css">
+<!--
+body {
+	background: #000000 url("./images/page_bg.png") repeat-x 0px 205px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+#page {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: left;
+}
+#page_header {
+	text-align: center;
+	padding: 63px 0 54px 0;
+}
+#page_header h1 {
+	height: 0;
+	padding-top: 88px;
+	overflow: hidden;
+	background: url("./images/2fastaudio.png") no-repeat top center;
+	margin: 0;
+}
+#page_header p {
+	display: none;
+}
+#page_content {
+	height: 340px;
+	background: #FFFFFF url("./images/content_bg.png") no-repeat bottom center;
+}
+#content_text {
+	width: 473px;
+	padding: 30px 0 0 18px;
+	float: left;
+}
+#content_pics {
+	float: right;
+	width: 483px;
+	padding-top: 30px;
+}
+#page_content h2 {
+	font-size: 10px;
+	font-weight: bold;
+	border-bottom: 1px solid #aaa9a9;
+	padding: 0 0 2px 2px;
+	margin: 0 0 19px 0;
+}
+#page_content p {
+	line-height: 1.6em;
+	margin-top: 0;
+	padding-left: 2px;
+}
+a img {
+	border: 0;
+}
+.view_gal {
+	text-align: right;
+	padding-top: 25px;
+}
+#page_menu {
+	
+}
+#page_menu ul {
+	margin: 50px 0 0 360px;
+	padding: 0;
+	list-style: none;
+}
+#page_menu ul li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	padding-right: 7px;
+	margin-right: 3px;
+	background: url("./images/bullet.png") no-repeat center right;
+}
+#page_menu ul li#contact {
+	padding: 0;
+	margin: 0;
+	background: 0;
+} 
+#page_menu ul li a {
+	display: block;
+	padding-top: 12px;
+	height: 0;
+	overflow: hidden;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+#page_menu #home a {
+	width: 55px;
+	background-image: url("./images/menu_01.png");
+}
+#page_menu a:hover {
+	background-position: 0px -12px;
+}
+#page_menu #about a {
+	width: 60px;
+	background-image: url("./images/menu_03.png");
+}
+#page_menu #gallery a {
+	width: 74px;
+	background-image: url("./images/menu_05.png");
+}
+#page_menu #contact a {
+	width: 78px;
+	background-image: url("./images/menu_07.png");
+}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+/* ***********************************************************
+Example 4-3 (DHTMLAPI.js)
+"Dynamic HTML:The Definitive Reference"
+2nd Edition
+by Danny Goodman
+Published by O'Reilly & Associates  ISBN 1-56592-494-0
+http://www.oreilly.com
+Copyright 2002 Danny Goodman.  All Rights Reserved.
+************************************************************ */
+// DHTMLapi.js custom API for cross-platform
+// object positioning by Danny Goodman (http://www.dannyg.com).
+// Release 2.0. Supports NN4, IE, and W3C DOMs.
+
+// Global variables
+var isCSS, isW3C, isIE4, isNN4, isIE6CSS;
+// Initialize upon load to let all browsers establish content objects
+function initDHTMLAPI() {
+    if (document.images) {
+        isCSS = (document.body && document.body.style) ? true : false;
+        isW3C = (isCSS && document.getElementById) ? true : false;
+        isIE4 = (isCSS && document.all) ? true : false;
+        isNN4 = (document.layers) ? true : false;
+        isIE6CSS = (document.compatMode && document.compatMode.indexOf("CSS1") >= 0) ? true : false;
+    }
+}
+// Set event handler to initialize API
+window.onload = initDHTMLAPI;
+
+// Seek nested NN4 layer from string name
+function seekLayer(doc, name) {
+    var theObj;
+    for (var i = 0; i < doc.layers.length; i++) {
+        if (doc.layers[i].name == name) {
+            theObj = doc.layers[i];
+            break;
+        }
+        // dive into nested layers if necessary
+        if (doc.layers[i].document.layers.length > 0) {
+            theObj = seekLayer(document.layers[i].document, name);
+        }
+    }
+    return theObj;
+}
+
+// Convert object name string or object reference
+// into a valid element object reference
+function getRawObject(obj) {
+    var theObj;
+    if (typeof obj == "string") {
+        if (isW3C) {
+            theObj = document.getElementById(obj);
+        } else if (isIE4) {
+            theObj = document.all(obj);
+        } else if (isNN4) {
+            theObj = seekLayer(document, obj);
+        }
+    } else {
+        // pass through object reference
+        theObj = obj;
+    }
+    return theObj;
+}
+
+// Convert object name string or object reference
+// into a valid style (or NN4 layer) reference
+function getObject(obj) {
+    var theObj = getRawObject(obj);
+    if (theObj && isCSS) {
+        theObj = theObj.style;
+    }
+    return theObj;
+}
+
+// Position an object at a specific pixel coordinate
+function shiftTo(obj, x, y) {
+    var theObj = getObject(obj);
+    if (theObj) {
+        if (isCSS) {
+            // equalize incorrect numeric value type
+            var units = (typeof theObj.left == "string") ? "px" : 0 
+            theObj.left = x + units;
+            theObj.top = y + units;
+        } else if (isNN4) {
+            theObj.moveTo(x,y)
+        }
+    }
+}
+
+// Move an object by x and/or y pixels
+function shiftBy(obj, deltaX, deltaY) {
+    var theObj = getObject(obj);
+    if (theObj) {
+        if (isCSS) {
+            // equalize incorrect numeric value type
+            var units = (typeof theObj.left == "string") ? "px" : 0 
+            theObj.left = getObjectLeft(obj) + deltaX + units;
+            theObj.top = getObjectTop(obj) + deltaY + units;
+        } else if (isNN4) {
+            theObj.moveBy(deltaX, deltaY);
+        }
+    }
+}
+
+// Set the z-order of an object
+function setZIndex(obj, zOrder) {
+    var theObj = getObject(obj);
+    if (theObj) {
+        theObj.zIndex = zOrder;
+    }
+}
+
+// Set the background color of an object
+function setBGColor(obj, color) {
+    var theObj = getObject(obj);
+    if (theObj) {
+        if (isNN4) {
+            theObj.bgColor = color;
+        } else if (isCSS) {
+            theObj.backgroundColor = color;
+        }
+    }
+}
+
+// Set the visibility of an object to visible
+function show(obj) {
+    var theObj = getObject(obj);
+    if (theObj) {
+        theObj.visibility = "visible";
+    }
+}
+
+// Set the visibility of an object to hidden
+function hide(obj) {
+    var theObj = getObject(obj);
+    if (theObj) {
+        theObj.visibility = "hidden";
+    }
+}
+
+// Retrieve the x coordinate of a positionable object
+function getObjectLeft(obj)  {
+    var elem = getRawObject(obj);
+    var result = 0;
+    if (document.defaultView) {
+        var style = document.defaultView;
+        var cssDecl = style.getComputedStyle(elem, "");
+        result = cssDecl.getPropertyValue("left");
+    } else if (elem.currentStyle) {
+        result = elem.currentStyle.left;
+    } else if (elem.style) {
+        result = elem.style.left;
+    } else if (isNN4) {
+        result = elem.left;
+    }
+    return parseInt(result);
+}
+
+// Retrieve the y coordinate of a positionable object
+function getObjectTop(obj)  {
+    var elem = getRawObject(obj);
+    var result = 0;
+    if (document.defaultView) {
+        var style = document.defaultView;
+        var cssDecl = style.getComputedStyle(elem, "");
+        result = cssDecl.getPropertyValue("top");
+    } else if (elem.currentStyle) {
+        result = elem.currentStyle.top;
+    } else if (elem.style) {
+        result = elem.style.top;
+    } else if (isNN4) {
+        result = elem.top;
+    }
+    return parseInt(result);
+}
+
+// Retrieve the rendered width of an element
+function getObjectWidth(obj)  {
+    var elem = getRawObject(obj);
+    var result = 0;
+    if (elem.offsetWidth) {
+        result = elem.offsetWidth;
+    } else if (elem.clip && elem.clip.width) {
+        result = elem.clip.width;
+    } else if (elem.style && elem.style.pixelWidth) {
+        result = elem.style.pixelWidth;
+    }
+    return parseInt(result);
+}
+
+// Retrieve the rendered height of an element
+function getObjectHeight(obj)  {
+    var elem = getRawObject(obj);
+    var result = 0;
+    if (elem.offsetHeight) {
+        result = elem.offsetHeight;
+    } else if (elem.clip && elem.clip.height) {
+        result = elem.clip.height;
+    } else if (elem.style && elem.style.pixelHeight) {
+        result = elem.style.pixelHeight;
+    }
+    return parseInt(result);
+}
+
+// Return the available content width space in browser window
+function getInsideWindowWidth() {
+    if (window.innerWidth) {
+        return window.innerWidth;
+    } else if (isIE6CSS) {
+        // measure the html element's clientWidth
+        return document.body.parentElement.clientWidth
+    } else if (document.body && document.body.clientWidth) {
+        return document.body.clientWidth;
+    }
+    return 0;
+}
+
+// Return the available content height space in browser window
+function getInsideWindowHeight() {
+    if (window.innerHeight) {
+        return window.innerHeight;
+    } else if (isIE6CSS) {
+        // measure the html element's clientHeight
+        return document.body.parentElement.clientHeight
+    } else if (document.body && document.body.clientHeight) {
+        return document.body.clientHeight;
+    }
+    return 0;
+}
+
+
+
+</script>
+<script language="JavaScript" type="text/javascript">
+/***********************
+    SCROLLBAR CREATION
+************************/
+// Global variables
+var scrollEngaged = false;
+var scrollInterval;
+var scrollBars = new Array();
+
+// Utility to retrieve effective style property
+function getElementStyle(elemID, IEStyleAttr, CSSStyleAttr) {
+    var elem = document.getElementById(elemID);
+    if (elem.currentStyle) {
+        return elem.currentStyle[IEStyleAttr];
+    } else if (window.getComputedStyle) {
+        var compStyle = window.getComputedStyle(elem, "");
+        return compStyle.getPropertyValue(CSSStyleAttr);
+    }
+    return "";
+}
+
+// Scrollbar constructor function
+function scrollBar(rootID, ownerID, ownerContentID) {
+    this.rootID = rootID;
+    this.ownerID = ownerID;
+    this.ownerContentID = ownerContentID;
+    this.index = scrollBars.length;
+	
+	if (navigator.userAgent.indexOf("Gecko") != -1) {
+		document.getElementById(ownerID).style.overflow = "hidden";
+	}
+
+    // one-time evaluations for use by other scroll bar manipulations	
+    this.rootElem = document.getElementById(rootID);
+    this.ownerElem = document.getElementById(ownerID);
+    this.contentElem = document.getElementById(ownerContentID);
+    this.ownerHeight = parseInt(getElementStyle(ownerID, "height", "height"));
+    this.ownerWidth = parseInt(getElementStyle(ownerID, "width", "width"));
+    this.ownerBorder = parseInt(getElementStyle(ownerID, "borderTopWidth", 
+        "border-top-width")) * 2;
+    this.contentHeight = Math.abs(parseInt(this.contentElem.style.top));
+    this.contentWidth = this.contentElem.offsetWidth;
+    this.contentFontSize = parseInt(getElementStyle(this.ownerContentID, 
+        "fontSize", "font-size"));
+    this.contentScrollHeight = this.contentElem.scrollHeight;
+
+    // create quirks object whose default (CSS-compatible) values
+    // are zero; pertinent values for quirks mode filled in later	
+    this.quirks = {on:false, ownerBorder:0, scrollBorder:0, contentPadding:0};
+    if (navigator.appName == "Microsoft Internet Explorer" && 
+        navigator.userAgent.indexOf("Win") != -1 && 
+        (typeof document.compatMode == "undefined" || 
+        document.compatMode == "BackCompat")) {
+        this.quirks.on = true;
+        this.quirks.ownerBorder = this.ownerBorder;
+        this.quirks.contentPadding = parseInt(getElementStyle(ownerContentID, 
+        "padding", "padding"));
+     }
+
+    // determined at scrollbar initialization time
+    this.scrollWrapper = null;
+    this.upButton = null;
+    this.dnButton = null;
+    this.thumb = null;
+    this.buttonLength = 0;
+    this.thumbLength = 0;
+    this.scrollWrapperLength = 0
+    this.dragZone = {left:0, top:0, right:0, bottom:0}
+
+    // build a physical scrollbar for the root div	
+    this.appendScroll = appendScrollBar;
+}
+
+// Create scrollbar elements and append to the "pseudo-window"
+function appendScrollBar() {
+    // button and thumb image sizes (programmer customizable)
+    var imgH = 16;
+    var imgW = 16;
+    var thumbH = 27;
+
+    // "up" arrow, needed first to help size scrollWrapper
+    var lineup = document.createElement("img");
+    lineup.id = "lineup" + (scrollBars.length - 1);
+    lineup.className = "lineup";
+    lineup.index = this.index;
+    lineup.src = "./images/scrollup.png";
+    lineup.height = imgH;
+    lineup.width = imgW;
+    lineup.alt = "Scroll Up";
+    lineup.style.position = "absolute";
+    lineup.style.top = "0px";
+    lineup.style.left = "0px";
+
+    // scrollWrapper defines "page" region color and 3-D borders
+    var wrapper = document.createElement("div");
+    wrapper.id = "scrollWrapper" + (scrollBars.length - 1);
+    wrapper.className = "scrollWrapper";
+    wrapper.index = this.index;
+    wrapper.style.position = "absolute";
+    wrapper.style.visibility = "hidden";
+    wrapper.style.top = "0px";
+    wrapper.style.left = this.ownerWidth + this.ownerBorder - 
+        this.quirks.ownerBorder + "px";
+    /*wrapper.style.borderTop = "2px solid #666666";
+    wrapper.style.borderLeft = "2px solid #666666";
+    wrapper.style.borderRight= "2px solid #cccccc";
+    wrapper.style.borderBottom= "2px solid #cccccc";
+    wrapper.style.backgroundColor = "#999999";*/
+    if (this.quirks.on) {
+        this.quirks.scrollBorder = 2;
+    }
+    wrapper.style.width = lineup.width + (this.quirks.scrollBorder * 2) + "px";
+    wrapper.style.height = this.ownerHeight + (this.ownerBorder - 4) - 
+        (this.quirks.scrollBorder * 2) + "px";
+
+    // "down" arrow
+    var linedn = document.createElement("img");
+    linedn.id = "linedown" + (scrollBars.length - 1);
+    linedn.className = "linedown";
+    linedn.index = this.index;
+    linedn.src = "./images/scrolldown.png";
+    linedn.height = imgH;
+    linedn.width = imgW;
+    linedn.alt = "Scroll Down";
+    linedn.style.position = "absolute";
+    linedn.style.top = parseInt(this.ownerHeight) + (this.ownerBorder - 4) - 
+        (this.quirks.ownerBorder) - linedn.height + "px";
+    linedn.style.left = "0px";
+
+    // fixed-size draggable thumb 
+    var thumb = document.createElement("img");
+    thumb.id = "thumb" + (scrollBars.length - 1);
+    thumb.index = this.index;
+    thumb.src = "./images/scroller.png";
+    thumb.height = thumbH;
+    thumb.width = imgW;
+    thumb.alt = "Scroll Dragger";
+    thumb.style.position = "absolute";
+    thumb.style.top = lineup.height + "px";
+    thumb.style.width = imgW + "px";
+    thumb.style.height = thumbH + "px";
+    thumb.style.left = "0px";
+
+    // fill in scrollBar object properties from rendered elements
+    this.upButton = wrapper.appendChild(lineup);
+    this.thumb = wrapper.appendChild(thumb);
+    this.dnButton = wrapper.appendChild(linedn);
+    this.scrollWrapper = this.rootElem.appendChild(wrapper);
+    this.buttonLength = imgH;
+    this.thumbLength = thumbH;
+    this.scrollWrapperLength = parseInt(getElementStyle(this.scrollWrapper.id, 
+        "height", "height"));
+    this.dragZone.left = 0;
+    this.dragZone.top = this.buttonLength;
+    this.dragZone.right = this.buttonLength;
+    this.dragZone.bottom = this.scrollWrapperLength - this.buttonLength - 
+        (this.quirks.scrollBorder * 2)
+
+    // all events processed by scrollWrapper element
+    this.scrollWrapper.onmousedown = handleScrollClick;
+    this.scrollWrapper.onmouseup = handleScrollStop;
+    this.scrollWrapper.oncontextmenu = blockEvent;
+    this.scrollWrapper.ondrag = blockEvent;
+
+    // OK to show
+    this.scrollWrapper.style.visibility = "visible";
+}
+
+/***************************
+    EVENT HANDLER FUNCTIONS
+****************************/
+// onmouse up handler
+function handleScrollStop() {
+    scrollEngaged = false;
+}
+
+// Prevent Mac context menu while holding down mouse button
+function blockEvent(evt) {
+    evt = (evt) ? evt : event;
+    evt.cancelBubble = true;
+    return false;
+}
+
+// click event handler
+function handleScrollClick(evt) {
+    var fontSize, contentHeight;
+    evt = (evt) ? evt : event;
+    var target = (evt.target) ? evt.target : evt.srcElement;
+    target = (target.nodeType == 3) ? target.parentNode : target;
+    var index = target.index;
+    fontSize = scrollBars[index].contentFontSize;
+    switch (target.className) {
+        case "lineup" :
+            scrollEngaged = true;
+            scrollBy(index, parseInt(fontSize));
+            scrollInterval = setInterval("scrollBy(" + index + ", " + 
+                parseInt(fontSize) + ")", 100);
+            evt.cancelBubble = true;
+            return false;
+            break;
+        case "linedown" :
+            scrollEngaged = true;
+            scrollBy(index, -(parseInt(fontSize)));
+            scrollInterval = setInterval("scrollBy(" + index + ", -" + 
+                parseInt(fontSize) + ")", 100);
+            evt.cancelBubble = true;
+            return false;
+            break;
+        case "scrollWrapper" :
+            scrollEngaged = true;
+            var evtY = (evt.offsetY) ? evt.offsetY : ((evt.layerY) ? evt.layerY : -1);
+            if (evtY >= 0) {
+                var pageSize = scrollBars[index].ownerHeight - fontSize;
+                var thumbElemStyle = scrollBars[index].thumb.style;
+                // set value negative to push document upward
+                if (evtY > (parseInt(thumbElemStyle.top) + 
+                    scrollBars[index].thumbLength)) {
+                    pageSize = -pageSize;
+                }
+                scrollBy(index, pageSize);
+                scrollInterval = setInterval("scrollBy(" + index + ", " + 
+                    pageSize + ")", 100);
+                evt.cancelBubble = true;
+                return false;
+            }
+    }
+    return false;
+}
+
+// Activate scroll of inner content
+function scrollBy(index, px) {
+    var scroller = scrollBars[index];
+    var elem = document.getElementById(scroller.ownerContentID);
+    var top = parseInt(elem.style.top);
+    var scrollHeight = parseInt(elem.scrollHeight);
+    var height = scroller.ownerHeight;
+    if (scrollEngaged && top + px >= -scrollHeight + height && top + px <= 0) {
+        shiftBy(elem, 0, px);
+        updateThumb(index);
+    } else if (top + px < -scrollHeight + height) {
+        shiftTo(elem, 0, -scrollHeight + height - scroller.quirks.contentPadding);
+        updateThumb(index);
+        clearInterval(scrollInterval);
+    } else if (top + px > 0) {
+        shiftTo(elem, 0, 0);
+        updateThumb(index);
+        clearInterval(scrollInterval);
+    } else {
+        clearInterval(scrollInterval);
+    }
+}
+
+/**********************
+    SCROLLBAR TRACKING
+***********************/
+// Position thumb after scrolling by arrow/page region
+function updateThumb(index) {
+    var scroll = scrollBars[index];
+    var barLength = scroll.scrollWrapperLength - (scroll.quirks.scrollBorder * 2);
+    var buttonLength = scroll.buttonLength;
+    barLength -= buttonLength * 2;
+    var docElem = scroll.contentElem;
+    var docTop = Math.abs(parseInt(docElem.style.top));
+    var scrollFactor = docTop/(scroll.contentScrollHeight - scroll.ownerHeight);
+    shiftTo(scroll.thumb, 0, Math.round((barLength - scroll.thumbLength) * 
+        scrollFactor) + buttonLength);
+}
+
+// Position content per thumb location
+function updateScroll() {
+    var index = selectedObj.index;
+    var scroller = scrollBars[index];
+    var barLength = scroller.scrollWrapperLength - (scroller.quirks.scrollBorder * 2);
+    var buttonLength = scroller.buttonLength;
+    var thumbLength = scroller.thumbLength;
+    var wellTop = buttonLength;
+    var wellBottom = barLength - buttonLength - thumbLength;
+    var wellSize = wellBottom - wellTop;
+    var thumbTop = parseInt(getElementStyle(scroller.thumb.id, "top", "top"));
+    var scrollFactor = (thumbTop - buttonLength)/wellSize;
+    var docElem = scroller.contentElem;
+    var docTop = Math.abs(parseInt(docElem.style.top));
+    var scrollHeight = scroller.contentScrollHeight;
+    var height = scroller.ownerHeight;   
+    shiftTo(scroller.ownerContentID, 0, -(Math.round((scrollHeight - height) * 
+        scrollFactor)));
+}
+/*******************
+   ELEMENT DRAGGING
+********************/
+// Global holds reference to selected element
+var selectedObj;
+// Globals hold location of click relative to element
+var offsetX, offsetY;
+var zone = {left:0, top:16, right:16, bottom:88};
+
+// Set global reference to element being engaged and dragged
+function setSelectedElem(evt) {
+    var target = (evt.target) ? evt.target : evt.srcElement;
+    target = (target.nodeType && target.nodeType == 3) ? target.parentNode : target;
+    var divID = (target.id.indexOf("thumb") != -1) ? target.id : "";
+    if (divID) {
+        if (document.layers) {
+            selectedObj = document.layers[divID];
+        } else if (document.all) {
+            selectedObj = document.all(divID);
+        } else if (document.getElementById) {
+            selectedObj = document.getElementById(divID);
+        }
+        setZIndex(selectedObj, 100);
+        return;
+    }
+    selectedObj = null;
+    return;
+}
+
+// Drag thumb only within scrollbar region
+function dragIt(evt) {
+    evt = (evt) ? evt : event;
+    var x, y, width, height;
+    if (selectedObj) {
+        if (evt.pageX) {
+            x = evt.pageX - offsetX;
+            y = evt.pageY - offsetY;
+        } else if (evt.clientX || evt.clientY) {
+            x = evt.clientX - offsetX;
+            y = evt.clientY - offsetY;
+        }
+        var index = selectedObj.index;
+        var scroller = scrollBars[index];
+        var zone = scroller.dragZone;
+        width = scroller.thumb.width;
+        height = scroller.thumb.height;
+        x = (x < zone.left) ? zone.left : ((x + width > zone.right) ? zone.right - width : x);
+        y = (y < zone.top) ? zone.top : ((y + height > zone.bottom) ? zone.bottom - height : y);
+        shiftTo(selectedObj, x, y);
+        updateScroll();
+        evt.cancelBubble = true;
+        return false;
+    }
+}
+
+// Turn selected element on and set cursor offsets
+function engage(evt) {
+    evt = (evt) ? evt : event;
+    setSelectedElem(evt);
+    if (selectedObj) {
+        if (document.body && document.body.setCapture) {
+            // engage event capture in IE/Win
+            document.body.setCapture();
+        }
+        if (evt.pageX) {
+            offsetX = evt.pageX - ((typeof selectedObj.offsetLeft != "undefined") ? 
+                      selectedObj.offsetLeft : selectedObj.left);
+            offsetY = evt.pageY - ((selectedObj.offsetTop) ? 
+                      selectedObj.offsetTop : selectedObj.top);
+        } else if (typeof evt.clientX != "undefined") {
+            offsetX = evt.clientX - ((selectedObj.offsetLeft) ? 
+                      selectedObj.offsetLeft : 0);
+            offsetY = evt.clientY - ((selectedObj.offsetTop) ? 
+                      selectedObj.offsetTop : 0);
+        }
+        return false;
+    }
+}
+
+// Turn selected element off
+function release(evt) {
+    if (selectedObj) {
+        setZIndex(selectedObj, 0);
+        if (document.body && document.body.releaseCapture) {
+            // stop event capture in IE/Win
+            document.body.releaseCapture();
+        }
+        selectedObj = null;
+    }
+}
+
+// Assign event handlers used by both Navigator and IE
+function initDrag() {
+    if (document.layers) {
+        // turn on event capture for these events in NN4 event model
+        document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP);
+        return;
+    } else if (document.body & document.body.addEventListener) {
+        // turn on event capture for these events in W3C DOM event model
+    	document.addEventListener("mousedown", engage, true);
+    	document.addEventListener("mousemove", dragIt, true);
+    	document.addEventListener("mouseup", release, true);
+    	return;
+    }
+  	document.onmousedown = engage;
+   	document.onmousemove = dragIt;
+   	document.onmouseup = release;
+    return;
+}
+
+
+</script>
+
+<script type="text/javascript">
+
+// Make a scrollBar object and build one on screen
+function initScrollbars() {
+    scrollBars[0] = new scrollBar("pseudoWindow", "outerWrapper", "innerWrapper");
+    scrollBars[0].appendScroll();
+}
+
+</script>
+</head>
+<body onload="initDHTMLAPI(); initDrag(); initScrollbars()">
+<div id="page">
+
+<div id="page_header">
+	<h1>2FastAudio</h1>
+	<p>Sound, displays, parts.</p>
+</div>
+
+<div id="page_content">
+	<div id="content_text">
+		<h2>Welcome</h2>
+		<div id="pseudoWindow" style="position:relative;">
+
+		<div id="outerWrapper" style="position:absolute; top:0px; left:0px; height: 190px; width:450px; overflow: auto;">
+		<div id="innerWrapper" style="position:absolute; top:0px; left:0px; padding-right: 5px; width: 425px;">
+			<p>2 Fast Audio is your premier source for custom sound and car parts. Whether you are looking for tv’s, subs, amps, or ligthing, 2 fast audio has what you need. We have been in business for nearly 5 years now and located in Reno, NV. 2 Fast Audio is your premier source for custom sound and car parts.Whether you are looking for tv’s, subs, amps, or ligthing, 2 fast audio has what you need. We have been in business for nearly 5 years now and located in Reno, NV. 2 Fast Audio is your premier source for custom sound and car parts.Whether you are looking for tv’s, subs, amps, or ligthing, 2 fast audio has what you need. We have been in business for nearly 5 years now and located in Reno, NV. 2 Fast Audio is your premier source for custom sound and car parts.Whether you are looking for tv’s, subs, amps, or ligthing, 2 fast audio has what you need. We have been in business for nearly 5 years now and located in Reno, NV.</p>
+		</div>
+		</div>
+		</div>
+	</div>
+	
+	<div id="content_pics">
+		<h2>Miscellaneous</h2>
+		<p><img src="./images/misc_photos.png" /></p>
+		<p class="view_gal"><a href="#"><img src="./images/view_gallery.png" /></a></p>
+	</div>
+</div>
+
+<div id="page_menu">
+<ul>
+	<li id="home"><a href="#">Home</a></li>
+	<li id="about"><a href="#">About</a></li>
+	<li id="gallery"><a href="#">Gallery</a></li>
+	<li id="contact"><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
